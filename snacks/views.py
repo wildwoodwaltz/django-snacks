@@ -8,5 +8,9 @@ class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 class SnackListView(ListView):
-    template_name: 'snack_list.html'
-    model: Snack
+    template_name = 'snack_list.html'
+    model = Snack
+
+class SnackDetailView(ListView):
+    template_name = 'snack_detail.html'
+    model = Snack

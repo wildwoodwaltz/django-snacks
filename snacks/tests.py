@@ -1,10 +1,12 @@
 from django.test import SimpleTestCase, TestCase
 from django.urls import reverse
 
+from snacks.models import Snack
+
 # Create your tests here.
 
 
-class SnackTest(SimpleTestCase):
+class SnackTest(TestCase):
 
 # TEST CASE 
     def test_home_page_status(self):
@@ -59,3 +61,12 @@ class SnackTest(SimpleTestCase):
         url = reverse('snacks')
         response = self.client.get(url)
         self.assertTemplateUsed(response, 'snack_list.html')
+
+# TEST SNACK ITEM
+
+    def test_detail_page_context(self):
+        url = reverse('snack_detail',args=(1,))
+        response = self.client.get(url)
+        snack = response.context['snack']
+        self.assertEqual(snack.name, "Chocodile")
+        self.assertEqual(snack.purchaser, 'Tibi')
