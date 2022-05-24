@@ -10,10 +10,16 @@
 
 ### Features
 
+  * admin
   * home page
   * about page
+  * snacks page
+  * Snack Model
+    * name
+    * purchaser
+    * description
 
 ### User Acceptance Tests:
 
-* Test templates and routing for About and Home pages
+* Test templates and routing for all pages
 * Test 404 for invalid route
